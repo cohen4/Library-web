@@ -1,0 +1,190 @@
+/* Import font */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+/* Global */
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CSS for header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF1E0;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'roboto';
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.logo-img{
+  float: left;
+  position: relative;
+  height: "130";
+  width: 40%;
+  align-items: center;
+  margin: 15px 0px 0px 15px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFF1E0;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+
+/* CSS for main section */
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lokalise.com/blog/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/Translation_memory-1536x882.png.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.banner h1 {
+  font-family: 'roboto';
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+
+
+.banner .types {
+  display: inline;
+    width:max-content;
+    padding: 11px 20px;
+    margin-right: 8px;
+    background-color: #DCDEF7;
+    opacity: 100%;
+    outline: none;
+    border-radius: 4px;
+    border: 1.3px solid #9597a6;
+    font-size: 18px;
+    font-family: 'roboto';
+}
+
+.banner input {
+  display: inline;
+    width: 300px;
+    padding: 10px 25px;
+    margin-right: -5px;
+    background-color: #fff;
+    opacity: 90%;
+    outline: none;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    font-size: 20px;
+    font-family: 'roboto';
+}
+
+.banner select {
+    width:max-content;
+    padding: 5px 5px;
+    margin-left: 5px;
+    background-color: #DCDEF7;
+    opacity: 90%;
+    outline: none;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    font-size: 18px;
+    font-family: 'roboto';
+}
+
+.banner option {
+    padding: 10px 10px;
+    background-color: #DCDEF7;
+    opacity: 90%;
+    outline: none;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    font-size: 16px;
+    font-family: 'roboto';
+}
+
+.banner button {
+  display: inline;
+  background-color: #1A2A89;
+  opacity: 95%;
+  color: #fff;
+  border-radius: 3px;
+  padding: 11px 25px;
+  border: 1.3px solid #1A2A89;
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.spacer{
+  padding: 30px;
+  background-color: #f3f3f3;
+}
+
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DCDEF7;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #000;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}

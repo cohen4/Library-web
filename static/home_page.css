@@ -1,0 +1,255 @@
+/* Import font */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+/* Global */
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF1E0;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'roboto';
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.logo-img{
+  float: left;
+  position: relative;
+  height: "130";
+  width: 40%;
+  align-items: center;
+  margin: 15px 0px 0px 15px;
+}
+
+.hi {
+  display: inline;
+  font-family: 'roboto';
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  color: #1A2A89;
+  font-weight: 500;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFF1E0;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+
+
+/* CSS for main section */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://i.ebayimg.com/images/g/JwsAAOSwfXlgRtzJ/s-l1600.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner h1 {
+  font-family: 'roboto';
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.banner .bigger {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.banner .smaller {
+  font-family: 'roboto';
+  font-size: 18px;
+  color: #d1d1d1;
+  text-transform:capitalize;
+  margin-bottom: 20px ;
+}
+
+.banner .button {
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  text-underline-offset: 14px ;
+
+
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4)
+}
+
+.member {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 80px;
+}
+
+.member .actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.member .actions i {
+  width: fit-content;
+  font-size: 50px;
+  color: #333333;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  padding: 12px;
+}
+
+.member .actions .actions-heading {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.member .actions .actions-text {
+  font-family: 'roboto';
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+.member .button {
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-underline-offset: 10px ;
+
+  cursor: pointer;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+.about-me img {
+  float: right;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+.about-me-text h2 {
+  font-family: 'roboto';
+  font-size: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+  width: 60%;
+  margin-bottom: 25px;
+}
+
+.about-me-text p {
+  display: inline;
+  font-family: 'roboto';
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 10px;
+}
+
+
+/* CSS for footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DCDEF7;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #000;
+}
+
+
+.bottom-links .links p {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 0 10px;
+}
+
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}

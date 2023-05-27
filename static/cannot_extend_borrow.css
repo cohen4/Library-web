@@ -1,0 +1,151 @@
+/* Import font */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+/* Global */
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF1E0;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'roboto';
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.logo-img{
+  float: left;
+  position: relative;
+  height: "130";
+  width: 40%;
+  align-items: center;
+  margin: 15px 0px 0px 15px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFF1E0;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+/* CSS for main section */
+
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEDFC;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+
+.message-text h2 {
+  font-family: 'roboto';
+  font-size: 30px;
+  text-align: center;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.message-text h3 {
+  font-family: 'roboto';
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #333333;
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.message-text p {
+  font-family: 'roboto';
+  text-align: center;
+  font-size: 18px;
+  color: #585858;
+  margin: 10px 0;
+}
+.message a {
+  display: block;
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'roboto';
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 40px;
+  text-underline-offset: 15px;
+  cursor: pointer;
+}
+
+.message img{
+  width: 28%;
+  scale: 95%;
+}
+
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DCDEF7;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #000;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}

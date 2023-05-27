@@ -1,0 +1,284 @@
+/* Import font */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+/* Global */
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF1E0;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'roboto';
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.logo-img{
+  float: left;
+  position: relative;
+  height: "130";
+  width: 40%;
+  align-items: center;
+  margin: 15px 0px 0px 15px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFF1E0;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+/* CSS for main section */
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEDFC;
+  padding: 30px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+.results h2 {
+  font-family: 'roboto';
+  font-size: 30px;
+  text-align: center;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.results h3 {
+  font-family: 'roboto';
+  font-size: 25px;
+  text-align: center;
+  color: #333333;
+  text-transform: uppercase;
+
+
+}
+
+ /*** Table Styles **/
+  
+ body {
+  background-color: #EBEDFC;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+table {
+  margin: auto;
+}
+
+ .table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 30px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1A2A89;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:22px;
+  font-weight: 300;
+  padding:10px 24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+  text-transform: capitalize;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#333333;
+  font-size:16px;
+  font-weight:normal;
+  text-transform: capitalize;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr .line {
+  border-bottom: 3px solid #C1C3D1;
+}
+
+tr .line-text-center {
+  border-bottom: 3px solid #C1C3D1;
+  text-align: center;
+}
+
+tr .yes {
+  border-bottom: 3px solid #C1C3D1;
+  background-color: rgb(182, 228, 160); 
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+}
+
+tr .no {
+  border-bottom: 3px solid #C1C3D1;
+  background-color: rgb(228, 160, 160); 
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+ 
+td {
+  background:#FFFFFF;
+  padding:10px 20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+
+td.text-center {
+  text-align: center;
+}
+
+/* CSS for button */
+.button {
+  padding: 25px 0;
+  margin: 20px 0;
+}
+.button a {
+  width: 30%;
+  display: block;
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'roboto';
+  border-radius: 5px;
+  font-size: 18px;
+  margin: auto;
+  text-underline-offset: 15px;
+  cursor: pointer;
+}
+
+form .submit_btn {
+  display: block;
+  background-color: #FFE0D6;
+  color: #666B85;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'roboto';
+  border-radius: 5px;
+  font-size: 16px;
+  margin: auto;
+  text-underline-offset: 15px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+ /* Button Hover effect */
+.button a:hover{
+  background: #DCDEF7;
+  color: #000;
+}
+
+ form .submit_btn:hover{
+  background: #DCDEF7;
+  color: #000;
+}
+
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DCDEF7;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #000;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}
+

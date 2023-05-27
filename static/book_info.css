@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF1E0;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'roboto';
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.logo-img{
+  float: left;
+  position: relative;
+  height: "130";
+  width: 40%;
+  align-items: center;
+  margin: 15px 0px 0px 15px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFF1E0;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+/* CSS for main section */
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background:url("media/book.png");
+
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.banner h1 {
+  font-family: 'roboto';
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.banner p {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.banner button {
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4)
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 80px;
+}
+
+.info .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.info .detail i {
+  width: fit-content;
+  font-size: 50px;
+  color: #333333;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  padding: 12px;
+}
+
+.info .detail .detail-heading {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.info .detail .detail-text {
+  font-family: 'roboto';
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+
+
+.availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+
+.availability-text h2 {
+  font-family: 'roboto';
+  font-size: 30px;
+  text-align: center;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.availability-text p {
+  font-family: 'roboto';
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+.availability button {
+  background-color: #1A2A89;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DCDEF7;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #000;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-family: 'roboto';
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  font-family: 'roboto';
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}
