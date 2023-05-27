@@ -13,5 +13,5 @@ Some functions that the project includes:
 6. Making an future order for book
 7. Showing list of History borrows and orders  
 
-the most sql code you can see in functions and classes python files
-in tempaltes folder there is HTML code and in static folder there is css code.
+The most sql code you can see in functions and classes python files.
+In tempaltes folder there is HTML code and in static folder there is css code.
