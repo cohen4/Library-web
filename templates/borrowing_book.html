@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\borrowing_book.css" > 
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	  </header>
+
+    <body>
+        <div class="wrapper">
+            <div class="borrow_form">
+                <div class="title"> Borrowing Book</div>
+                    
+                <form action="{{url_for('borrow_book')}}" method="post"> <!--form to get borrow book and user informatiom-->
+                    <div class="form_wrap">
+                        <div class="input_grp">
+                            <div class="input_wrap">
+                                <label for="fname">Serial Number Of The Book</label>
+                                <input type="text" name="serial_number_book" required="" maxlength="45">
+                            </div>
+
+                            <div class="input_wrap">
+                                <label for="fname">Mail Of The Member</label>
+                                <input type="text" name="member_mail" required="" maxlength="45">
+                            </div>
+                        </div>
+
+                        <p align=center>{{book_not_found}}</p> <!-- Alerts that this book doesn't exist in the library -->
+                        <p align=center>{{cannot_borrow}}</p> <!-- Alerts that this book isn't available for borrow -->
+                        <p align=center>{{email_not_exists}}</p> <!-- Alerts that the entered email address doesn't belong to any user -->
+
+                        <div class="input_wrap">
+                            <input type="submit" value="Borrow Now" class="submit_btn">
+                        </div>      
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+

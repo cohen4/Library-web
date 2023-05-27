@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\login.css" > 
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+<body>
+    <div class="wrapper">
+    <div class="login_form">
+        <div class="title"> Log In</div>
+            
+        <form action="{{url_for('login')}}" method="post"> <!-- Form gets email and password -->
+            <div class="form_wrap">
+            <div class="input_wrap">
+                <label for="email">Email</label>
+                <input type="email" name="email" required="" maxlength="45">
+            </div>
+
+            <div class="input_wrap">
+                <label for="password">Password</label>
+                <input type="password" name="password" required="" maxlength="45">
+            </div>
+
+        <p align=center>{{ email_doesnt_exists}}</p> <!-- If email is not registered return message -->
+
+        <div class="input_wrap">
+            <input type="submit" value="Enter" class="submit_btn">
+        </div>
+    
+            
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\reader_reg.css" > 
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	  </header>
+
+    <body>
+        <div class="wrapper">
+        <div class="registration_form">
+        <div class="title"> Reader Registration Form</div>
+            
+            <form action="{{url_for('reader_reg')}}" method="post"> <!-- Form to get User informatin-->
+                <div class="form_wrap">
+
+                    <div class="input_grp">
+                    <div class="input_wrap">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="first_name" required="" maxlength="45">
+                    </div>
+
+                    <div class="input_wrap">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="last_name" required="" maxlength="45">
+                    </div>
+                    </div>
+
+                    <div class="input_wrap">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" required="" maxlength="45">
+                    </div>
+
+                    <p align=center>{{ email_already_exists}}</p>
+
+                    <div class="input_wrap">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" required="" maxlength="45">
+                    </div>
+
+                    <div class="input_wrap">
+                        <label for="phone">Phone Number</label> <!-- Phone no more than 10 digits-->
+                        <input type="number" name="phone" required="" maxlength="10" min="0" max="9999999999"> 
+                    </div>
+
+                    <div class="input_wrap">
+                        <label for="birth_date">Date of Birth</label>
+                        <input class="text" type="date" name="birth_date" required="" max="{{today_date}}">
+                    </div>
+
+                    <div class="input_wrap">
+                        <label for="street">Street</label>
+                        <input type="text" name="street" required="" maxlength="45">
+                    </div>
+
+                    <div class="input_grp">
+                    <div class="input_wrap">
+                        <label for="city">City</label>
+                        <input type="text" name="city" required="" maxlength="45">
+                    </div>
+                    <div class="input_wrap">
+                        <label for="house">House Number</label>
+                        <input type="number" name="house" required="" min="0" maxlength="45">
+                    </div>
+                    </div>
+
+                    <div class="input_wrap">
+                        <input type="submit" value="Register Now" class="submit_btn">
+                    </div>
+
+                    </div>    
+                </div>
+                </form>
+        </div>
+    </body>
+</html>
+

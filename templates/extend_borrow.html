@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\extend_borrow.css" > 
+        <title>BooksAreUs</title>
+         <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<body> <!-- Body contains table with information filled and required -->  
+        <h2 align="center"> Borrow Was Extended Successfully By :</h2>
+		<p class="mail" align="center"> {{member_mail}} </p>
+        <p align="center">Details:</p>
+
+        <div class="wrapper">
+            <div class="information">
+                <table class="center">
+
+					<tr>
+                    <td>Serial Number Book Copy</td>
+                    <td>{{sn_book_copy}}</td> <!-- gets serial number from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Email Address</td>
+                    <td>{{member_mail}}</td> <!-- gets email from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Borrow Extension Request Date</td>
+                    <td>{{borrow_extend_request_date}}</td> <!-- gets author from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Extended Borrow Date</td>
+                    <td>{{extended_borrow_date}}</td> <!-- gets date from python -->
+                    </tr>
+	
+				</table>
+
+                <!-- Buttons for easy access -->
+                <div >
+                    <a href="{{url_for('home_page')}}" class="button">Back To Home Page</a>
+                </div>
+
+			</div>
+		</div>
+		<br>
+	</body>
+</html>
+

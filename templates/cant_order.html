@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\cant_order.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+      
+	<main> <!-- Message for books that are already ordered -->
+		<div class="message">
+        
+			<div class="message-text">
+				<h2 >Uh Oh!</h2>
+				<h3>You can't order this book due to high demand.</h3>
+				<p>Try another book or another branch if it's possible.</p> <br>
+				<a href="{{url_for('search')}}">Back to Search</a>
+	
+			</div>
+			<img src="..\static\media\doggo3.png">
+		</div>
+	</main>
+
+	<footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+		<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Visit Us</span>
+			  <p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  <p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+			</div>
+		  </div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Quick Access</span>
+			  <a href="{{url_for('home_page')}}">Home</a>
+			</div>
+		  </div>
+	  </footer>
+</html>

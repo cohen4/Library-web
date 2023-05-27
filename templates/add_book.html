@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\add_book.css" > 
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+    <body>
+        <p align=center>{{name_not_exists}}</p> <!-- Alert that this is a new book in the library -->
+        <div class="wrapper">
+        <div class="info_form">
+        <div class="title"> Add new book</div>
+            
+        <table class="center">
+
+            <tr> <!-- Shows serial number from previous page -->
+            <td>Serial Number:</td>
+            <td>{{serial_no_book}}</td>
+            </tr>
+        </table>
+
+        <form action="{{url_for('add_book')}}" method="post"> <!-- Form collects book information -->
+            <div class="form_wrap">
+                <div class="input_wrap">
+                    <label for="book_name">Book Name</label>
+                    <input type="text" name="book_name" required="" maxlength="45">
+                </div>
+
+                <div class="input_wrap">
+                    <label for="author_name">Author Name</label>
+                    <input type="text" name="author_name" required="" maxlength="45">
+                </div>
+
+                <div class="input_wrap">
+                    <label for="rel_date">Release Date</label>
+                    <input class="text" type="date" name="rel_date" required="">
+                </div>
+
+                <div class="input_wrap">
+                    <label for="publisher">Publisher</label>
+                    <input type="text" name="publisher" required="" maxlength="45">
+                </div>
+
+                <div class="input_wrap">
+                    <input type="submit" value="Add Book" class="submit_btn">
+                </div>
+            </div>    
+        </form>
+        </div>
+        </div>
+    </body>
+</html>
+

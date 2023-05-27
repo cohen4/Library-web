@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\enter_serial_no_book.css" > 
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+    <body>
+        <div class="wrapper">
+        <div class="serial_form">
+            <div class="title">Add Book</div>
+                
+            <!-- Form to get wanted book info by serial number-->
+            <form action="{{url_for('enter_serial_no_book')}}" method="post">
+                <div class="form_wrap">
+                    <div class="input_wrap">
+                        <label for="serial_number">Enter Serial Number of the Book</label>
+                        <input type="number" name="serial_no_book" required="" placeholder="Up to 4 digits" min="0" max="9999">
+                    </div>
+
+                    <div class="input_wrap">
+                        <input type="submit" value="Submit" class="submit_btn">
+                    </div>
+                </div>    
+            </form>
+        </div>
+        </div>
+    </body>
+

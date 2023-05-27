@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\search_results.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	  </header>
+
+	  <main>
+		<div class="results">
+			<h2>Search results:</h2>
+		</div>
+
+		<table> <!--Table for search results-->
+			<thead class="table-fill">
+			  <tr>
+				<th>Serial Number</th>
+				<th>book name</th>
+				<th>Author</th>
+				<th>release date</th>
+				<th>publisher</th>
+				<th>branch Address</th>
+				<th>phone</th>
+				<th>quantity</th>
+			  </tr>
+
+			  <!--for loop gets all book information-->
+			  {% for row in quantity_of_branch_holds_book %}
+			</thead>
+			<tbody class="table-hover">
+			  <tr>
+				<td class="line" rowspan="2">{{row[0]}}</td> <!--gets serial number-->
+				<td class="line" rowspan="2">{{row[1]}}</td> <!--gets name-->
+				<td class="line" rowspan="2">{{row[2]}}</td> <!--gets Author-->
+				<td class="line" rowspan="2">{{row[3]}}</td> <!--gets date-->
+				<td class="line" rowspan="2">{{row[4]}}</td> <!--gets publisher-->
+
+				{% if row[6][0] == 0 and reader_login %} <!--checks if quantity in 1st branch is zero and user connected-->
+				<td colspan="2">
+					<p> Currently not available in {{row[5][0]}} </p>
+				</td>
+				<td>
+					<!--form to get information to order the book-->
+					<form action="{{url_for('order_book')}}" method="post"> 
+					<input type = "hidden" name = "serial_number_book" value = {{row[0]}} />
+					<input type = "hidden" name = "branch_name" value = "{{row[5][0]}}" />
+					<input type="submit" value="Order Now" class="submit_btn">
+					</form>
+				</td>
+
+				{% else %} <!--if the quantity in 1st branch > 0 -->
+				<td>{{row[5][0]}}</td> <!--gets branch address-->
+				<td>{{row[7][0]}}</td> <!--gets branch phone-->
+				<td class="text-center">{{row[6][0]}}</td> <!--gets quantity-->
+			  </tr>
+			  {% endif %}
+					
+				{% if row[6][1] == 0 and reader_login %} <!--checks if quantity in 2nd branch is zero and user connected-->
+				<tr>
+				<td class="line" colspan="2">
+					<p> Currently not available in {{row[5][1]}} </p> 
+				</td>
+				<td class="line"> <!--form to get information to order the book-->
+					<form action="{{url_for('order_book')}}" method="post">
+					<input type = "hidden" name = "serial_number_book" value = {{row[0]}} />
+					<input type = "hidden" name = "branch_name" value = "{{row[5][1]}}" />
+					<input type="submit" value="Order Now" class="submit_btn">
+					</form>
+				</td>
+				</tr>
+					{% else %} <!--if the quantity in 2nd branch > 0 -->
+				<tr>
+					<td class="line">{{row[5][1]}}</td> <!--gets branch address-->
+					<td class="line"> {{row[7][1]}}</td> <!--gets branch phone-->
+					<td class="line-text-center">{{row[6][1]}}</td> <!--gets quantity-->
+				</tr>
+
+				{% endif %}
+				{% endfor %}
+
+			</tbody>
+			
+		</table>
+
+			<div class="button"> <!--button for easy access-->
+			<a href="{{url_for('search')}}">Back to Search</a>
+			</div>
+
+	  </main>
+
+	  <footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+		<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Visit Us</span>
+			  <p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  <p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+			</div>
+		  </div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Quick Access</span>
+			  <a href="{{url_for('home_page')}}">Home</a>
+			</div>
+		  </div>
+	  </footer>
+</html>

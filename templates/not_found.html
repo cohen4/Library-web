@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\not_found.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+      
+	<main> <!-- Message for name that doesn't exist in the library -->
+		<div class="message">
+			<img src="..\static\media\doggo5.png">
+
+			<div class="message-text">
+				<h2 >Uh Oh!</h2>
+				<h3>Looks like we can't find what you are looking for.</h3>
+				<p>Try typing the name again or search for another book.</p> <br>
+				<a href="{{url_for('search')}}">Back to Search</a>
+			</div>
+		</div>
+	</main>
+
+	<footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+		<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Visit Us</span>
+			  <p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  <p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+			</div>
+		  </div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Quick Access</span>
+			  <a href="{{url_for('home_page')}}">Home</a>
+			</div>
+		  </div>
+	</footer>
+</html>

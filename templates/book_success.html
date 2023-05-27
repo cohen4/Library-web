@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\book_success.css" >
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+    <body> <!-- Body contains table with information filled and required -->  
+        <h2 align="center"> Book was Added Successfully! </h2>
+        <p align="center">Book Details:</p>
+        <div class="wrapper">
+            <div class="information">
+                <table class="center">
+
+                    <tr>
+                    <td>Book Name</td>
+                    <td>{{book_name}}</td> <!-- returns book name from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Author Name</td>
+                    <td>{{author_name}}</td> <!-- returns author name from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Serial Number</td>
+                    <td>{{serial_number}}</td> <!-- returns serial number from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Release Date</td>
+                    <td>{{rel_date}}</td> <!-- returns date from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Publisher</td>
+                    <td>{{publisher}}</td> <!-- returns publisher from python -->
+                    </tr>
+
+                    <tr>
+                    <td>Branch Name</td>
+                    <td>{{branch}}</td> <!-- returns branch from python -->
+                    </tr>
+
+                </table>
+                <!-- Buttons to easy access -->
+                <div>
+                    <a href="{{url_for('enter_serial_no_book')}}" class="button">Add Another Book</a>
+                </div>
+                <div >
+                    <a href="{{url_for('home_page')}}" class="button">Back To Home Page</a>
+                </div>
+
+            </div>
+        </div>
+        <br>
+    </body>
+</html>

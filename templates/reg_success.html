@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\reg_success.css" >
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+    
+    <body>
+        <h2 align="center"> Registration Was Complete Successfully! </h2>
+        <p align="center">Here is your profile:</p>
+
+        <div class="wrapper">
+            <div class="registration_success">
+            <table class="center">
+
+                <tr>
+                <td>Full name</td>
+                <td>{{first_name}} {{last_name}}</td> <!--returns full name from python-->
+                </tr>
+
+                <tr>
+                <td>Email</td>
+                <td>{{email}}</td> <!--returns email from python-->
+                </tr>
+
+                <tr>
+                <td>Phone Number</td>
+                <td>{{phone}}</td> <!--returns phone from python-->
+                </tr>
+
+                <tr>
+                <td>{{type_of_date}}</td>
+                <td>{{date}}</td> <!--returns date from python-->
+                </tr>
+
+                <tr>
+                <td>Address</td>
+                <td>{{street}} {{house}}, {{city}}</td> <!--returns address from python-->
+                </tr>
+
+                <tr>
+                <td>{{more}}</td>
+                <td>{{branch}}</td> <!--returns branch (if it is librarian) from python-->
+                </tr>
+            </table>
+
+            <a href="{{url_for('login')}}" class="button">Log In</a>
+            </div>
+        </div>
+        <br><br>
+    </body>
+</html>

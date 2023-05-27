@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\borrow_success.css" > 
+        <title>BooksAreUs</title>
+         <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<body> <!-- Body contains table with information filled and required -->  
+        <h2 align="center"> Book was borrowed successfully By :</h2>
+		<p class="mail" align="center"> {{member_mail}} </p>
+        <p align="center">Book Details:</p>
+        <div class="wrapper">
+            <div class="information">
+                <table class="center">
+
+					{%for row in all_data_about_borrowed_book %} <!-- for loop gets information for each row from python -->
+					<tr>
+						<td>Serial Number Borrowed Copy:</td>
+						<td>{{row[0]}}</td> <!-- gets serial number from row -->
+						</tr>
+	
+						<tr>
+						<td>Book Name:</td>
+						<td>{{row[1]}}</td> <!-- gets name from row -->
+						</tr>
+	
+						<tr>
+						<td>Author Name:</td>
+						<td>{{row[2]}}</td> <!-- gets author from row -->
+						</tr>
+	
+						<tr>
+						<td>Borrow Start Date:</td>
+						<td>{{row[3]}}</td> <!-- gets date from row -->
+						</tr>
+	
+						<tr>
+						<td>Borrow End Date:</td>
+						<td>{{row[4]}}</td> <!-- gets date from row -->
+						</tr>
+	
+						<tr>
+						<td>Borrowed By:</td>
+						<td>{{row[5]}}</td> <!-- gets name from row -->
+						</tr>
+
+						<tr>
+							<td>Quantity Available In Branch <br> After Borrow:</td>
+							<td>{{quantity}}</td> <!-- gets updated quantity from python -->
+							</tr>
+
+					{% endfor %}
+	
+					</table>
+
+				<p>Quantity of books was updated in branch.</p> <!-- alert message -->
+
+					<!-- Buttons for easy access -->
+					<div >
+						<a href="{{url_for('home_page')}}" class="button">Back To Home Page</a>
+					</div>
+
+				</div>
+			</div>
+			<br>
+		</body>
+	</html>

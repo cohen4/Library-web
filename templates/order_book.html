@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\order_book.css" > 
+        <title>BooksAreUs</title>
+         <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+
+	<body>
+		<h2 align="center"> Order success! </h2>
+		<p align="center">Order Details:</p>
+		<div class="wrapper">
+			<div class="order_success">
+				<table class="center">
+
+				<tr>
+					<td>Serial Number:</td>
+					<td>{{all_order_data[0]}}</td> <!--returns serial number of book from python-->
+				</tr>
+
+				<tr>
+					<td>Serial Number Book Copy:</td>
+					<td>{{all_order_data[1]}}</td> <!--returns serial number of copy from python-->
+				</tr>
+
+				<tr>
+					<td>Book Name:</td>
+					<td>{{all_order_data[2]}}</td> <!--returns name from python-->
+				</tr>
+
+				<tr>
+					<td>Author Name:</td>
+					<td>{{all_order_data[3]}}</td> <!--returns author name from python-->
+				</tr>
+
+				<tr>
+					<td>Release Date:</td>
+					<td>{{all_order_data[4]}}</td> <!--returns date from python-->
+				</tr>
+
+				<tr>
+					<td>Publisher:</td>
+					<td>{{all_order_data[5]}}</td> <!--returns publisher from python-->
+				</tr>
+
+				<tr>
+					<td>Branch Name:</td>
+					<td>{{all_order_data[7]}}</td> <!--returns branch from python-->
+				</tr>
+
+				<tr>
+					<td>Ready To Collect From:</td>
+					<td>{{all_order_data[8]}}</td> <!--returns date from python-->
+				</tr>
+
+				<tr>
+					<td>Final Collection Date:</td>
+					<td>{{final_collection_date}}</td> <!--returns date from python-->
+				</tr>
+
+				</table>
+			
+				<div class="input_wrap">  <!--Buttons for easy access-->
+						<a href="{{url_for('search')}}" class="button">Order Another book</a>
+				</div>
+				<div class="input_wrap">
+						<a href="{{url_for('home_page')}}" class="button">Back To Home Page</a>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	</body>
+</html>

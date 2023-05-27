@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\search.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	  </header>
+
+	  <main>
+		<div class="banner">
+		  <h1>looking for something?</h1>
+
+		  <!-- Form for book name or author to search -->
+		  <form action="{{url_for('search')}}" method="post">
+			<div class="types">
+				<label for="search_kind">Search By</label> 
+				
+				<select name="search_kind" required="">
+					<option value="book_name">Book Name</option>
+					<option value="author">Author</option>
+				</select>
+			</div>
+				<input type="search"  name="search_input" placeholder="Search for book" required="" maxlength="45">
+				<button type="submit">Search</button>
+		</form>   
+		</div>
+
+        <div class="spacer">
+            <br>
+        </div>
+		
+		<footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+			<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+			  <div class="bottom-links">
+				<div class="links">
+					<span>Visit Us</span>
+					<p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  		<p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+				</div>
+			  </div>
+			  <div class="bottom-links">
+				<div class="links">
+				  <span>Quick Access</span>
+				  <a href="{{url_for('home_page')}}">Home</a>
+				</div>
+			  </div>
+		  </footer>
+</html>

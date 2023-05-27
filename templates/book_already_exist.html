@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <!-- Adding CSS file, page title and favicon -->
+        <link rel="stylesheet" type="text/css" href="..\static\book_already_exist.css" >
+        <title>BooksAreUs</title>
+        <link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+    </head>
+    
+    <body> <!-- Body contains table with information filled and required -->
+        <h2 align="center"> Book added to quantity in branch! </h2>
+        <p align="center">Book Details:</p><br>
+        <div class="wrapper">
+            <div class="information">
+                <table class="center">
+
+                    {%for row in all_data_about_book %} <!-- for loop gets information for each row from python -->
+					{% if quantity_in_branch == 1 %} <!-- Show message if the new book exists in another branch -->
+					<p align="center">
+					This book exists in another branch and is new in this branch </p>
+					{% endif %} 
+					<tr>
+                    <td>Serial Number:</td>
+                    <td>{{row[0]}}</td> <!-- gets serial number from row -->
+                    </tr>
+
+                    <tr>
+                    <td>Book Name:</td>
+                    <td>{{row[1]}}</td> <!-- gets name from row -->
+                    </tr>
+
+                    <tr>
+                    <td>Author Name:</td>
+                    <td>{{row[2]}}</td> <!-- gets author from row -->
+                    </tr>
+
+                    <tr>
+                    <td>Release Date:</td>
+                    <td>{{row[3]}}</td> <!-- gets date from row -->
+                    </tr>
+
+                    <tr>
+                    <td>Publisher:</td>
+                    <td>{{row[4]}}</td> <!-- gets publisher from row -->
+                    </tr>
+
+                    <tr>
+                    <td>Quantity In Branch:</td>
+                    <td>{{quantity_in_branch}}</td> <!-- gets updated quantity from python -->
+                    </tr>
+                    
+                    <tr>
+                    <td>Total Quantity:</td>
+                    <td>{{row[5]}}</td> <!-- gets total quantity of this book from row -->
+                    </tr>
+                    {% endfor %}
+
+                </table>
+                <!-- Buttons to easy access -->
+                <div class="input_wrap">
+                        <a href="{{url_for('enter_serial_no_book')}}" class="button">Add Another Book</a>
+                </div>
+
+                <div class="input_wrap">
+                        <a href="{{url_for('home_page')}}" class="button">Back To Home Page</a>
+                </div>
+            </div>
+        </div>
+        <br>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\home_page.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<p class="hi">{{user_name}}</p>
+		<nav class="nav-items">
+		  <a href="{{url_for('home_page')}}">Home</a>
+		  {% if session.email %} <!-- When user is logged in, buttons change -->
+		  <a href="{{url_for('logout')}}">Logout</a>
+		  {% else %}
+		  <a href="{{url_for('login')}}">Log In</a>
+		  {% endif %}
+		  <a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+	  <main>
+		<div class="banner"> <!-- Banner changes if user is logged in -->
+			{% if session.email and reader_login %}
+			<h1>{{user_name}}</h1>
+			<p class="bigger">Welcome back to the library</p>
+			<br><br>
+			<a href="{{url_for('search')}}" class="button">Book Search</a>
+
+			{% elif session.email and librarian_login %}
+			<h1>{{user_name}}</h1>
+			<p class="bigger">Welcome back to the library</p>
+			<br><br>
+			<a href="#about_sec" class="button">about us</a>
+
+			{% else %}
+		  <h1>Books Are Us</h1>
+		  <p class="bigger">"I have always imagined that Paradise will be a kind of library"</p>
+		  <p class="smaller">Jorge Luis Borges</p>
+		  <a href="#about_sec" class="button">about us</a>
+		  {% endif %}
+		</div>
+
+		<div class="member" id="reg">
+			<!--Here there are links to action pages. Actions change between login mode-->
+		  <div class="actions">
+			<i ></i> <!--Shape-->
+			{% if session.email and librarian_login %}
+			<p class="actions-heading">Add A Book</p>
+			<p class="actions-text">Click here to add a book.</p>
+			<a href="{{url_for('enter_serial_no_book')}}" class="button">Add</a>
+
+			{% elif session.email and reader_login %}
+			<p class="actions-heading">Borrow History</p>
+			<p class="actions-text">Click here to view borrowed books.</p>
+			<a href="{{url_for('borrow_history')}}" class="button">View</a>
+
+			{% else %}
+			<p class="actions-heading">Librarian</p>
+			<p class="actions-text">Click here to create an account.</p>
+			<a href="{{url_for('lib_reg')}}" class="button">Sign Up</a>
+			{% endif %}
+		  </div>
+
+		  <div class="actions">
+			<i></i> <!--Shape-->
+			{% if session.email and librarian_login %}
+			<p class="actions-heading">Borrow a Book</p>
+			<p class="actions-text">Click here to borrow a book.</p>
+			<a href="{{url_for('borrow_book')}}" class="button">Borrow</a>
+
+			{% elif session.email and reader_login %}
+			<p class="actions-heading">Orders List</p>
+			<p class="actions-text">Click here to view your orders.</p>
+			<a href="{{url_for('ordered_books_list')}}" class="button">View</a>
+
+			{% else %}
+			<p class="actions-heading">Reader</p>
+			<p class="actions-text">Click here to create an account.</p>
+			<a href="{{url_for('reader_reg')}}" class="button">Sign Up</a>
+			{% endif %}
+		  </div>
+
+		</div>
+
+		<div class="about-me" id="about_sec"> <!--Information about the library-->
+		  <div class="about-me-text">
+			<h2>About Books Are Us</h2>
+			<p>
+				We, at BooksAreUs believe that everybody should be with a book in their hand and a smile on their face.<br><br>
+				We know that the world had change, became more digital then ever, but remember- one book is worth a thousand tweets of Kanye West<br><br>
+				Our goal is to make people come to our website and feel at home.<br><br>
+				So, sit back, relax with a good cup of tea and start searching for the next great book we have to offer! <br><br>
+				As Drake once said, we started from the bottom- now were here. Today, we have over 2 branches across the country and over 20 different books- all waiting just for you<br><br>
+				And if you don't know where to start, don't hesitate and come to our branches and ask our lovely librarians for help- trust us, they are the best!<br><br>
+				We wish you a wonderful experience at our website and branches and happy hunting!<br><br>
+				From all the founding partners,<br><br>
+				Noa, Yarden and Maayan
+			</p>
+		</div>
+		<img src="https://e1.pxfuel.com/desktop-wallpaper/119/915/desktop-wallpaper-stock-of-book-aesthetic-books-old-books-aesthetic-book-pages-thumbnail.jpg" alt="books">
+		</div>
+	</main>
+
+	  <footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+		<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Visit Us</span>
+			  <p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  <p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+			</div>
+		  </div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Quick Access</span>
+			  <a href="{{url_for('home_page')}}">Home</a>
+			</div>
+		  </div>
+	  </footer>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> <!-- Adding CSS file, page title and favicon -->
+		<link rel="stylesheet" type="text/css" href="..\static\borrow_history.css" > 
+		<title>BooksAreUs</title>
+		<link rel="icon" type="image/x-icon" href="..\static\media\favicon3.ico">
+	</head>
+
+	<header class="header"> <!-- Header with logo and page navigation bar -->
+		<a href="{{url_for('home_page')}}" class="logo"> <img class="logo-img" src="..\static\media\logo.png"></a>
+		<nav class="nav-items">
+			<a href="{{url_for('home_page')}}">Home</a>
+			{% if session.email %} <!-- When user is logged in, buttons change -->
+			<a href="{{url_for('logout')}}">Logout</a>
+			{% else %}
+			<a href="{{url_for('login')}}">Log In</a>
+			{% endif %}
+			<a href="{{url_for('search')}}">Search</a>
+		</nav>
+	</header>
+
+	<main class="arrange">
+		<div class="title">
+			<h2 class="name">{{member_name}}</h2> <!-- Returns user first name from python -->
+			<h2>'s Borrow History:</h2>
+		</div>
+
+		<!-- checks if member had borrows. If no, return text answer. If yes, create table and enter loop. -->
+		{% if answer == "We did not find any books borrowed by this member" %}
+		<div>
+			<p>{{answer}}</p>
+		</div>
+
+		{% else %}
+			<table>
+				<thead class="table-fill">
+					<tr>
+						<th>Book Copy ID</th>
+						<th>Book Name</th>
+						<th>Author Name</th>
+						<th>Borrow Start Date</th>
+						<th>Borrow End Date</th>
+					</tr>
+				</thead>
+
+				<!-- Loop that returns information about book and borrow -->
+				<tbody class="table-hover">
+				{% for row in member_borrow_history %}
+					<tr>
+						<td>{{row[0]}}</td> <!-- returns book copy id -->
+						<td>{{row[1]}}</td> <!-- returns book name -->
+						<td>{{row[2]}}</td> <!-- returns author -->
+						<td>{{row[3]}}</td> <!-- returns borrow date -->
+						<td>{{row[4]}}</td> <!-- returns borrow end date -->
+
+						<td> <!-- If borrow end date haven't pass, show extend borrow button -->
+						{%if row[4] > date_today %}
+						<form action="{{url_for('extend_borrow')}}" method="post">
+							<!-- takes hidden information about this book -->
+							<input type = "hidden" name = "serial_number_book_copy" value = "{{row[0]}}" />
+							<input type = "hidden" name = "member_mail" value = "{{row[5]}}" />
+							<input type = "hidden" name = "borrow_start_date" value = "{{row[3]}}" />
+							<input type="submit" value="Extend Borrow" class="submit_btn">
+						</form>
+
+						{% else %} <!-- If return date has passed, dont show button -->
+						{% endif %}
+						</td>
+						{% endfor %}
+					</tr>
+				</tbody>
+			</table>
+		{% endif %}
+
+	</main>
+
+	<footer class="footer"> <!--Footer with copyrights, branches info and home link-->
+		<div class="copy">&copy; 2022 Group 24 : Yarden, Maayan, Noa</div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Visit Us</span>
+			  <p>Haifa - Hanesher 24, tel: 0864555555</p>  
+			  <p>Tel Aviv - Hanehoshet 16, tel: 0364888888</p>
+			</div>
+		  </div>
+		  <div class="bottom-links">
+			<div class="links">
+			  <span>Quick Access</span>
+			  <a href="{{url_for('home_page')}}">Home</a>
+			</div>
+		  </div>
+	  </footer>
+</html>
