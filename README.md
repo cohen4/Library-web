@@ -14,4 +14,4 @@ Some functions that the project includes:
 7. Showing list of History borrows and orders  
 
 The most sql code you can see in functions and classes python files.
-In tempaltes folder there is HTML code and in static folder there is css code.
+In template folder there is HTML code and in static folder there is css code.
