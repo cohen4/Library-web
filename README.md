@@ -4,7 +4,7 @@ con = mdb.connect(host="xxxx", user="xxxx", passwd="xxxx")
 # Get the cursor object
 cursor = con.cursor()
 cursor.execute("xxxx;")
-Key functionalities of the project include:
+# Key functionalities of the project include:
   1.Sign in as a librarian or member.
   2.Log in as a librarian or member.
   3.Search for a book.
