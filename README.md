@@ -5,8 +5,8 @@ get the cursor object
 cursor = con.cursor()
 cursor.execute("xxxx;")
 
-Key functionalities of the project include:< br / >
-  1.Sign in as a librarian or member.< br / >
+Key functionalities of the project include:<br>
+  1.Sign in as a librarian or member.<br>
   2.Log in as a librarian or member.< br / >
   3.Search for a book.< br / >
   4.Add a copy of a book (librarians only).< br / >
