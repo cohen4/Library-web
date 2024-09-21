@@ -1,21 +1,15 @@
-# Library-web
-An academic team project that includes Python,SQL, CSS, and HTML.
-For the code to run, you have to fill in the "connect to the database" lines.
-it looks like:
-#connect to the database
-con = mdb.connect(host = "xxxx", user = "xxxx", passwd= "xxxx")
-#get the cursor object
+This academic team project utilizes Python, SQL, CSS, and HTML. To run the code, you will need to complete the "connect to the database" section, which looks like this:
+# Connect to the database
+con = mdb.connect(host="xxxx", user="xxxx", passwd="xxxx")
+# Get the cursor object
 cursor = con.cursor()
 cursor.execute("xxxx;")
-
-Some functions that the project includes are:
-1. Sign in (as a librarian or member).
-2. Login (as a librarian or member)
-3. Searching for a book
-4. Adding a copy or book (if you are a librarian)
-5. Borrow a book.
-6. Making a future order for the book
-7. Showing a list of history's borrowings and orders
-
-The most SQL code you can see is in functions and classes in Python files.
-In the template folder, there is HTML code, and in the static folder, there is CSS code.
+Key functionalities of the project include:
+  1.Sign in as a librarian or member.
+  2.Log in as a librarian or member.
+  3.Search for a book.
+  4.Add a copy of a book (librarians only).
+  5.Borrow a book from a specific branch.
+  6.Place a future order for a book if it is currently borrowed by another member.
+  7.View a history of borrowings and orders (members only).
+The majority of the SQL code can be found within the functions and classes in the Python files. The HTML code is located in the template folder, while the CSS code is stored in the static folder.
