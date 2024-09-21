@@ -1,10 +1,11 @@
 This academic team project utilizes Python, SQL, CSS, and HTML. To run the code, you will need to complete the "connect to the database" section, which looks like this:
-# Connect to the database
+Connect to the database
 con = mdb.connect(host="xxxx", user="xxxx", passwd="xxxx")
-# Get the cursor object
+get the cursor object
 cursor = con.cursor()
 cursor.execute("xxxx;")
-# Key functionalities of the project include:
+
+Key functionalities of the project include:
   1.Sign in as a librarian or member.
   2.Log in as a librarian or member.
   3.Search for a book.
